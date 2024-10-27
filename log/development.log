@@ -1,0 +1,28 @@
+Started GET "/" for 127.0.0.1 at 2024-10-27 17:42:34 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 451)
+  Rendered layout layouts/application.html.erb (Duration: 21.3ms | Allocations: 12271)
+Completed 200 OK in 30ms (Views: 24.8ms | ActiveRecord: 0.0ms | Allocations: 16692)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-10-27 17:42:48 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 254)
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 595)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 10.2ms | Allocations: 7694)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 9115)
+Completed 200 OK in 22ms (Views: 12.8ms | ActiveRecord: 2.8ms | Allocations: 16070)
+
+
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE DATABASE "alchemy_lite_development" ENCODING = 'unicode'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "alchemy_lite_test" ENCODING = 'unicode'[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4756346352166852905)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(4756346352166852905)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
