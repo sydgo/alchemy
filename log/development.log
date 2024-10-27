@@ -26,3 +26,44 @@ Completed 200 OK in 22ms (Views: 12.8ms | ActiveRecord: 2.8ms | Allocations: 160
   [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(4756346352166852905)[0m
   [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2024-10-27 17:47:14 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 451)
+  Rendered layout layouts/application.html.erb (Duration: 20.9ms | Allocations: 15882)
+Completed 200 OK in 27ms (Views: 23.6ms | ActiveRecord: 0.0ms | Allocations: 20303)
+
+
+Started GET "/users/sign_up" for ::1 at 2024-10-27 17:47:20 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 254)
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 595)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 9.9ms | Allocations: 7695)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 9136)
+Completed 200 OK in 23ms (Views: 12.4ms | ActiveRecord: 3.6ms | Allocations: 16078)
+
+
+Started POST "/users" for ::1 at 2024-10-27 17:47:49 -0400
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"peepee@dick.gov", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "peepee@dick.gov"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "peepee@dick.gov"], ["encrypted_password", "$2a$12$eWUjAbUM3X82qsjuegDpO.XsbZb8OTHuiMuad9NRWrK4YGCldDJfO"], ["created_at", "2024-10-27 21:47:49.846620"], ["updated_at", "2024-10-27 21:47:49.846620"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 193ms (ActiveRecord: 4.3ms | Allocations: 17653)
+
+
+Started GET "/" for ::1 at 2024-10-27 17:47:49 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 37)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 1504)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms | Allocations: 1772)
+
+
